@@ -30,6 +30,11 @@ const userModel = new Schema(
       minlength: [6, "The length of password can be minimum 6 characters"],
       set: value => bcryptjs.hashSync(value, bcryptjs.genSaltSync(10)),
     },
+    phone: {
+      type: String,
+      minlength: [11, "The length of number can be minimum 11 digits"],
+    },
+    address: { type: String },
     image: {
       type: String,
     },
