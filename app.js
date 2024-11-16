@@ -3,8 +3,8 @@ require("dotenv").config();
 const createError = require("http-errors");
 const cors = require("cors");
 const morgan = require("morgan");
-const userRouter = require("./routes/userRoutes");
 const { errorResponse } = require("./controller/responseController");
+const router = require("./routes");
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(morgan());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/users", userRouter);
+app.use(router);
 
 app.get("/", (req, res) => {
   res.send("server is running !");
