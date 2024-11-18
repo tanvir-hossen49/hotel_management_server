@@ -27,6 +27,7 @@ const userModel = new Schema(
     },
     password: {
       type: String,
+      required: [true, "Password is required"],
       minlength: [6, "The length of password can be minimum 6 characters"],
       set: value => bcryptjs.hashSync(value, bcryptjs.genSaltSync(10)),
     },
@@ -40,6 +41,9 @@ const userModel = new Schema(
     },
     role: {
       type: String,
+      enum: ["admin", "manager", "staff", "customer"],
+      default: "customer",
+      required: true,
     },
   },
   { timestamps: true }
