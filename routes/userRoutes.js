@@ -1,15 +1,17 @@
-const {
-  signupController,
-  loginController,
-  getAllUsers,
-  deleteUser,
-} = require("../controller/userController");
-
+const { getAllUsers, deleteUserByID } = require("../controller/userController");
 const userRouter = require("express").Router();
 
-// TODO: add middleware for get all users.
-
+// getUser by id
+userRouter.get("/:userId", () => {});
+// update user by id
+userRouter.put("/:userId", () => {});
+// update user by id
+userRouter.patch("/:userId", () => {});
+// delete user by id
+userRouter.delete("/", deleteUserByID);
+// create user
+userRouter.post("/", () => {});
+// get all users
 userRouter.get("/", getAllUsers);
-userRouter.delete("/", deleteUser);
 
 module.exports = userRouter;

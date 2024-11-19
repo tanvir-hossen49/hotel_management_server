@@ -23,7 +23,35 @@ const getAllUsers = async (req, res, next) => {
   }
 };
 
-const deleteUser = async (req, res, next) => {
+const getUserByID = async (req, res, next) => {
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
+const postUser = async (req, res, next) => {
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
+const putUserByID = async (req, res, next) => {
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
+const patchUserByID = async (req, res, next) => {
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
+const deleteUserByID = async (req, res, next) => {
   try {
     const email = req.query.email;
 
@@ -47,4 +75,11 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
-module.exports = { getAllUsers, deleteUser };
+module.exports = {
+  getAllUsers,
+  getUserByID,
+  postUser,
+  putUserByID,
+  patchUserByID,
+  deleteUserByID,
+};

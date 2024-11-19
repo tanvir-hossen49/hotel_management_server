@@ -17,6 +17,7 @@ const createNewUser = (name, email, password, phone) => {
 const deleteUserByProperty = (key, value) => {
   return User.deleteOne({ [key]: value });
 };
+
 const findAllUsers = () => {
   return User.find();
 };

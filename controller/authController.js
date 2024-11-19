@@ -44,8 +44,7 @@ const loginController = async (req, res, next) => {
 
     // Verify the token
     const decoded = jwt.verify(token, "golam-tanvir");
-    const userId = decoded.result._id;
-
+    const userId = decoded.user._id;
     const user = await loginService(userId);
 
     return successResponse(res, {

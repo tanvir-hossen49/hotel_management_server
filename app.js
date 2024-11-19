@@ -11,7 +11,7 @@ const app = express();
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json());
-app.use(morgan());
+app.use(morgan("combined"));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(router);
